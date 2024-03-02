@@ -1,0 +1,70 @@
+﻿@page
+@model cars_webapp.Pages.Cars.ListCarsModel
+
+<h1 class="text-center m-5">Catalogue de nos voitures</h1>
+
+<div class="container mt-50 mb-50  col-xl-9">
+
+    <div class="row">
+        @foreach (var car in Model.Cars)
+        {
+            <div class="card card-body mb-4 mt-2">
+                <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                    <div class="mr-2 mb-3 mb-3 card-body-div">
+                        <img class="card-image card"
+                            src=@car.ImageUrl
+                            alt="@car.Brand @car.Model @car.Finition">
+
+                    </div>
+                    <div class="media-body">
+                        <span class="fs-1 media-title font-weight-bold text-primary mb-4 m-5">
+                            @car.Brand @car.Model @car.Finition
+                        </span>
+                        <div class="fs-5 text-start ms-5">
+                            <p class="mt-5">Acheté le <span class="text-info">@(car.DateOfPurchase != null ?
+                                car.DateOfPurchase.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de <span
+                                    class="text-info">@Utils.MoneyConvertor.FloatToEuroString(car.PurchasePrice)</span>.</p>
+
+                            <p>Disponible à la vente à partir du <span
+                                    class="text-success">@(car.DateOfAvailabilityToSell != null ?
+                                car.DateOfAvailabilityToSell.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de <span
+                                    class="text-success">@Utils.MoneyConvertor.FloatToEuroString(car.SellingPrice)</span>.</p>
+
+                            @if (car.Reparations != null)
+                            {
+                                if(car.IsSold){
+                                    <p class="fs-3 fw-bold mt-4">Les réparations effectuées : </p>
+                                }else{
+                                    <p class="fs-3 fw-bold mt-4">Les réparations à effecuter : </p>
+                                }
+                                <ul>
+                                        @foreach (var reparation in car.Reparations)
+                                        {
+                                            <li>@reparation</li>
+                                        }
+                                </ul>
+                                <p class="fs-5 fw-bold mt-4">Coût des réparations <span class="text-secondary">@Utils.MoneyConvertor.FloatToEuroString(car.ReparationsCost)</span>.</p>
+                            }
+                            @{
+                                if (!car.IsSold)
+                                {
+                                    <p >Vendu le <span class="text-danger">@(car.DateOfSale != null ?
+                                    car.DateOfSale.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de <span
+                                                class="text-danger">@Utils.MoneyConvertor.FloatToEuroString(car.SellingPrice)</span>.</p>
+                                    <div class="ml-lg-3 m-auto text-center w-50 btn btn-warning btn-lg px-5 mt-4 text-white">Add to cart</div>
+                                }else{
+                                    <div class="ml-lg-3 m-auto text-center w-50 btn-danger btn-lg mt-4 text-white p-3 px-5">Vendu</div>
+                                }
+                            }
+                            <button type="button" class="btn btn-outline-success btn-lg p-3 px-5 ">
+                            <a href="/UpdateCar?vin=@car.VIN"><i class="icon-cart-add mr-2"></i> Update</a>
+                                        </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
