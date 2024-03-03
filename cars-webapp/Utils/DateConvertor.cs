@@ -6,7 +6,7 @@ namespace cars_webapp.Utils
     {
         public static DateTime? DateStringToDateTime(string dateString)
         {
-            if (string.IsNullOrWhiteSpace(dateString))
+            if (string.IsNullOrEmpty(dateString))
             {
                 return null;
             }

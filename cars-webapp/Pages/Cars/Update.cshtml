@@ -1,0 +1,129 @@
+@page
+@model cars_webapp.Pages.Cars.UpdateModel
+@{
+    ViewData["Title"] = "UpdateCar";
+}
+@{
+    if (Model.Car == null)
+    {
+        <h2>Car not found</h2>
+    }
+    else
+    {
+        <h1 class="text-center m-5">Modifier les détails de l'annonce</h1>
+        <div class="container col-md-4">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="@Model.Car.VIN">
+                <div class="form-group m-3">
+                    <label asp-for="@Model.Car.Brand" class="fs-5 fw-bold m-2" for="carBrand">Marque de la voiture :</label>
+                    <input asp-for="@Model.Car.Brand" class="form-control">
+                    <span asp-validation-for="@Model.Car.Brand" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carModel">Modèle de la voiture :</label>
+                    <input class="form-control" asp-for="@Model.Car.Model">
+                    <span asp-validation-for="@Model.Car.Model" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carYear">Année de la voiture : </label>
+                    <input class="form-control" asp-for="@Model.Car.Year">
+                    <span asp-validation-for="@Model.Car.Year" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carFinition">Finition de la voiture :</label>
+                    <input class="form-control" asp-for="@Model.Car.Finition">
+                    <span asp-validation-for="@Model.Car.Finition" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carDateOfPurchase">Date d'achat (€) :</label>
+                    <input type="date" class="form-control" asp-for="@Model.Car.DateOfPurchase">
+                    <span asp-validation-for="@Model.Car.DateOfPurchase" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carPurchasePrice">Prix d'achat (€) :</label>
+                    <input class="form-control" asp-for="@Model.Car.PurchasePrice">
+                    <span asp-validation-for="@Model.Car.PurchasePrice" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carReparations">Réparations :</label>
+                    <input class="form-control mb-2" asp-for="@Model.Car.Reparations">
+                    <span class="help-block mx-2">Liste séparée par des virgules</span>
+                    <span asp-validation-for="@Model.Car.Reparations" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carReparationsCost">Coûts de réparation (€) :</label>
+                    <input class="form-control" asp-for="@Model.Car.ReparationsCost">
+                    <span asp-validation-for="@Model.Car.ReparationsCost" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carDateOfAvailability">Date de disponibilité à la vente :</label>
+                    <input type="date" class="form-control" asp-for="@Model.Car.DateOfAvailabilityToSell">
+                    <span asp-validation-for="@Model.Car.DateOfAvailabilityToSell" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carSellingPrice">Prix de vente (€) :</label>
+                    <input class="form-control" asp-for="@Model.Car.SellingPrice">
+                    <span asp-validation-for="@Model.Car.SellingPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <label class="fs-5 fw-bold m-2" for="carDateOfSale">Date de vente :</label>
+                    <input type="date" class="form-control" asp-for="@Model.Car.DateOfSale">
+                    <span asp-validation-for="@Model.Car.DateOfSale" class="text-danger"></span>
+                </div>
+                <div class="form-check m-3">
+                    <label class="form-check-label fs-5 fw-bold " for="isSold">
+                        Voiture vendue
+                    </label>
+                    <input class="form-check-input" type="checkbox" asp-for="@Model.Car.IsSold" id="isSold">
+                </div>
+
+                <div class="form-group m-3">
+                    <span asp-validation-for="@Model.UploadedFile" class="text-danger"></span><br>
+                    <label class="fs-5 fw-bold" for="carImage">Photo de la voiture:</label>
+                    <div class="input-group mt-3">
+                        <input asp-for="UploadedFile" class="form-control" id="carImage" accept="image/*">
+                        <label class="input-group-text" for="carImage">Upload</label>
+                    </div>
+                    <img id="img-preview" src="~/@Model.Car.ImageUrl" alt="Preview" class="img-preview m-auto w-50 mt-5" />
+                </div>
+
+                <div class="d-flex ">
+
+                    <button type="submit" class="btn btn-primary btn-lg w-50 mx-auto mt-5">Modifier</button>
+                </div>
+            </form>
+        </div>
+    }
+}
+
+<script>
+    window.onload = function () {
+        carImage = document.getElementById("carImage");
+        imgPreview = document.getElementById("img-preview");
+
+        if (imgPreview.src != "") {
+            loadImage(imgPreview);
+        }
+        // Image preview
+        $("#carImage").change(function () {
+            loadImageFromFile(this);
+        });
+
+        function loadImageFromFile(input) {
+            console.log(input);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#img-preview').attr('src', e.target.result);
+                    $('#img-preview').css('display', 'block');
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+        function loadImage(input) {
+            $('#img-preview').css('display', 'block');
+        }
+    }
+</script>

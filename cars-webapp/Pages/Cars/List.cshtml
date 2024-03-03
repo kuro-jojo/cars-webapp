@@ -1,0 +1,97 @@
+﻿@page
+@model cars_webapp.Pages.Cars.ListModel
+
+<h1 class="text-center m-5">Catalogue de nos voitures</h1>
+
+<div class="container mt-50 mb-50  col-xl-9">
+
+    <div class="row">
+        @foreach (var car in Model.Cars)
+        {
+            <div class="card card-body mb-4 mt-2">
+                <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                    <div class="mr-2 mb-3 mb-3 card-body-div">
+                        <img class="card-image card" src="~/@car.ImageUrl" alt="@car.Brand @car.Model @car.Finition">
+
+                    </div>
+                    <div class="media-body">
+                        <span class="fs-1 media-title font-weight-bold text-primary mb-4 m-5">
+                            @car.Brand @car.Model @car.Finition
+                        </span>
+                        <div class="fs-5 text-start ms-5">
+                            <p class="mt-5">Acheté le <span class="text-info">@(car.DateOfPurchase != null ?
+                                car.DateOfPurchase.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de <span
+                                    class="text-info">@Utils.MoneyConvertor.FloatToEuroString(car.PurchasePrice)</span>.</p>
+
+                            <p>Disponible à la vente à partir du <span class="text-success">@(car.DateOfAvailabilityToSell
+                                != null ?
+                                car.DateOfAvailabilityToSell.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de
+                                <span class="text-success">@Utils.MoneyConvertor.FloatToEuroString(car.SellingPrice)</span>.
+                            </p>
+
+                            @if (!string.IsNullOrEmpty(car.Reparations))
+                            {
+                                if (car.IsSold)
+                                {
+                                    <p class="fs-3 fw-bold mt-4">Les réparations effectuées : </p>
+                                }
+                                else
+                                {
+                                    <p class="fs-3 fw-bold mt-4">Les réparations à effecuter : </p>
+                                }
+                                <ul>
+                                    @foreach (var reparation in car.Reparations.Split(','))
+                                    {
+                                        <li>@reparation.Trim()</li>
+                                    }
+                                </ul>
+                                <p class="fs-5 fw-bold mt-4">Coût des réparations <span
+                                        class="text-secondary">@Utils.MoneyConvertor.FloatToEuroString(car.ReparationsCost)</span>.
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="fs-3 fw-bold mt-4">Aucune réparation à effectuer.</p>
+                            }
+                            @{
+
+                                if (car.IsSold)
+                                {
+                                    @* <div class="d-flex flex-column m-5"> *@
+
+                                    <div class="isSold-img">
+                                        <p>Vendu le <span class="text-danger">@(car.DateOfSale != null ?
+                                    car.DateOfSale.Value.ToString("dd MMMM yyyy") : "N/A")</span> au prix de <span
+                                                class="text-danger">@Utils.MoneyConvertor.FloatToEuroString(car.SellingPrice)</span>.
+                                        </p>
+                                        <img src="~/img/sold.png">
+                                    </div>
+                                    <div class="btn btn-outline-primary btn-lg  w-25 m-auto">
+                                        <a asp-page="Update" asp-route-vin="@car.VIN" class="d-block p-1 w-100"><i
+                                                class="icon-cart-add mr-2"></i> Modifier</a>
+                                    </div>
+                                    @* </div> *@
+                                }
+                                else
+                                {
+                                    <div class="d-flex justify-content-center m-5">
+
+                                        <div class="btn btn-outline-primary btn-lg  w-25 m-auto">
+                                            <a asp-page="Update" asp-route-vin="@car.VIN" class="d-block p-1 w-100"><i
+                                                    class="icon-cart-add mr-2"></i> Modifier</a>
+                                        </div>
+                                        <div class="btn-danger btn-lg p-3 m-auto text-center w-25 text-white"><a asp-page="Sell"
+                                                asp-route-vin="@car.VIN" class="d-block p-1 w-100"><i
+                                                    class="icon-cart-add mr-2"></i> Vendre</a></div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

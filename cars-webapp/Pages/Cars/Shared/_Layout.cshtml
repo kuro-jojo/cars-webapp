@@ -28,7 +28,8 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav
+            class="navbar navbar-expand-sm fixed-top navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Cars <img
                         src="https://cdn-icons-png.flaticon.com/512/2555/2555021.png" alt="" width="32px"
@@ -40,11 +41,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">
-                                Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/List">Catalogue</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ListCars">Catalogue</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Create">Ajouter une voiture</a>
                         </li>
                     </ul>
                 </div>
@@ -52,44 +52,21 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 w-100 h-100 mt-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted pt-4">
         <div class="container">
-            &copy; 2024 - cars_webapp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2024 - Created by Jonathan
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
-        window.onload = function () {
-            carImage = document.getElementById("carImage");
-            readURL(carImage);
-            // Image preview
-            $("#carImage").change(function () {
-                readURL(this);
-            });
 
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('#img-preview').attr('src', e.target.result);
-                        $('#img-preview').css('display', 'block');
-                    }
-
-                    reader.readAsDataURL(input.files[0]); // convert to base64 string
-                }
-            }
-
-        }
-    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

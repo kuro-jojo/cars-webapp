@@ -1,8 +1,9 @@
 VIN;Year;Brand;Model;Finition;DateOfPurchase;PurchasePrice;Reparations;ReparationsCost;DateOfAvailabilityToSell;SellingPrice;DateOfSale;ImageUrl;IsSold
-1G0WX6Z1TWDZPK01R;2019;Mazda;Miata;LE;07 janvier 2022;1800;Restauration complète;7600;07 avril 2022;9900;08 avril 2022;https://i0.wp.com/www.mazdamotoring.com/wp-content/uploads/2022/08/1992_mazda_mx-5_miata-pic-2542735042915584993-1024x768-1.jpeg?resize=610%2C407&ssl=1;yes
-1G0Q7S13YWOYTK3YG;2007;Jeep;Liberty;Sport;02 avril 2022;4500;Roulements des roues avant;350;07 avril 2022;5350;09 avril 2022;https://www.motortrend.com/uploads/sites/10/2015/11/2012-jeep-liberty-sport-suv-angular-front.png;yes
-1G0O918VZVUWTB8G5;2007;Renault;Scénic;TCe;04 avril 2022;1800;Radiateur, freins;690;08 avril 2022;2990;;https://images.caradisiac.com/images/6/8/6/0/166860/S1-essai-renault-scenic-tce-140-edc-la-bonne-pioche-547129.jpg;no
-1G00H8D0FX25XCPLG;2017;Ford;Explorer;XLT;05 avril 2022;24350;Pneus, freins;1100;09 avril 2022;25950;;https://build.ford.com/dig/Ford/Explorer/2023/HD-TILE/Image%5B%7CFord%7CExplorer%7C2023%7C1%7C1.%7C200A.K7D..PM7..888.89N.~4H800_VS-JN.86E.BSHAX.87B.SRB.123.64X.TFC.DBCAB.RWD.99H.76P.FEDAM.17A.GAS.55B.58S.IDBAD.53L.44T.XLT.UCL.%5D/EXT/1/vehicle.png;no
-1G0J66KYW1S6D3EM1;2008;Honda;Civic;LX;06 avril 2022;4000;Climatisation, freins;475;09 avril 2022;4975;09 avril 2022;https://picolio.auto123.com/17photo/honda/2017-honda-civic-lx_2.png;yes
-1G0A742TVJ0Z2H9F7;2016;Volkswagen;GTI;S;06 avril 2022;15250;Pneus;440;10 avril 2022;16190;12 avril 2022;https://file.kelleybluebookimages.com/kbb/base/evox/CP/12601/2018-Volkswagen-Golf%20GTI-front_12601_032_2400x1800_K8K8.png;yes
-1G03MSDKYM3GVC721;2013;Ford;Edge;SEL;07 avril 2022;10990;Pneus, freins, climatisation;950;11 avril 2022;12440;12 avril 2022;https://vehicle-images.dealerinspire.com/stock-images/chrome/769a6b4614d7bddd4a31ab2bd093688c.png;yes
+1G0WX6Z1TWDZPK01R;2019;Mazda;Miata;LE;07 janvier 2022;1800;Restauration complète;7600;07 avril 2022;9900;03 mars 2024;1G0WX6Z1TWDZPK01R_Mazda_Miata.png;yes
+1G0Q7S13YWOYTK3YG;2007;Jeep;Liberty;Sport;02 avril 2022;4500;Roulements des roues avant;350;07 avril 2022;5350;09 avril 2022;1G0Q7S13YWOYTK3YG_Jeep_Liberty.png;yes
+1G0O918VZVUWTB8G5;2007;Renault;Scénic;TCe;04 avril 2022;1800;Radiateur, freins;690;08 avril 2022;2990;03 mars 2024;1G0O918VZVUWTB8G5_Renault_Scénic.png;yes
+1G00H8D0FX25XCPLG;2017;Ford;Explorer;XLT;05 avril 2022;24350;Pneus, freins;1100;09 avril 2022;25950;;1G00H8D0FX25XCPLG_Ford_Explorer.png;no
+1G0J66KYW1S6D3EM1;2008;Honda;Civic;LX;06 avril 2022;4000;Climatisation, freins;475;09 avril 2022;4975;09 avril 2022;1G0J66KYW1S6D3EM1_Honda_Civic.png;yes
+1G0A742TVJ0Z2H9F7;2016;Volkswagen;GTI;S;06 avril 2022;15250;Pneus;440;10 avril 2022;16190;12 avril 2022;1G0A742TVJ0Z2H9F7_Volkswagen_GTI.png;yes
+1G03MSDKYM3GVC721;2013;Ford;Edge;SEL;07 avril 2022;10990;Pneus, freins, climatisation;950;11 avril 2022;12440;12 avril 2022;1G03MSDKYM3GVC721_Ford_Edge.png;yes
+1G029I01B59CM8EJ1;2024;BMW;Series 7;;26 février 2024;124;;0;12 mars 2024;0;03 mars 2024;1G029I01B59CM8EJ1_BMW_Series7.png;yes

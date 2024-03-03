@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/img/car_logo.png",
+      "PackagePath": "staticwebassets/img/car_logo.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/img/sold.png",
+      "PackagePath": "staticwebassets/img/sold.png"
+    },
+    {
       "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
@@ -243,6 +251,38 @@
     {
       "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G00H8D0FX25XCPLG_Ford_Explorer.png",
+      "PackagePath": "staticwebassets/upload/1G00H8D0FX25XCPLG_Ford_Explorer.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G029I01B59CM8EJ1_BMW_Series7.png",
+      "PackagePath": "staticwebassets/upload/1G029I01B59CM8EJ1_BMW_Series7.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G03MSDKYM3GVC721_Ford_Edge.png",
+      "PackagePath": "staticwebassets/upload/1G03MSDKYM3GVC721_Ford_Edge.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G0A742TVJ0Z2H9F7_Volkswagen_GTI.png",
+      "PackagePath": "staticwebassets/upload/1G0A742TVJ0Z2H9F7_Volkswagen_GTI.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G0J66KYW1S6D3EM1_Honda_Civic.png",
+      "PackagePath": "staticwebassets/upload/1G0J66KYW1S6D3EM1_Honda_Civic.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G0O918VZVUWTB8G5_Renault_Scénic.png",
+      "PackagePath": "staticwebassets/upload/1G0O918VZVUWTB8G5_Renault_Scénic.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G0Q7S13YWOYTK3YG_Jeep_Liberty.png",
+      "PackagePath": "staticwebassets/upload/1G0Q7S13YWOYTK3YG_Jeep_Liberty.png"
+    },
+    {
+      "Id": "/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/wwwroot/upload/1G0WX6Z1TWDZPK01R_Mazda_Miata.png",
+      "PackagePath": "staticwebassets/upload/1G0WX6Z1TWDZPK01R_Mazda_Miata.png"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.cars-webapp.props",

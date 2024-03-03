@@ -4,37 +4,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace cars_webapp.Pages.Cars
 {
-    public class UpdateCar : PageModel
+    public class CreateModel : PageModel
     {
-        private readonly ILogger<UpdateCar> _logger;
-        private string? Vin;
-
+        private readonly ILogger<CreateModel> _logger;
         [BindProperty]
         public Car? Car { get; set; }
-
-        public UpdateCar(ILogger<UpdateCar> logger)
+        [BindProperty]
+        public IFormFile? UploadedFile { get; set; }
+        public CreateModel(ILogger<CreateModel> logger)
         {
             _logger = logger;
         }
 
         public void OnGet()
         {
-            Request.Query.TryGetValue("vin", out var vin);
-            Vin = vin;
-            Car = Data.File.GetCarByVin(Vin);
-
+            // Car = new Car();
         }
 
         public IActionResult OnPost()
         {
-            Console.WriteLine("OnPost");
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
-            // Data.File.UpdateCar(car);
-            return RedirectToPage("/Cars/CarList");
+            Data.CarRepository.Add(Car, UploadedFile);
+            return RedirectToPage("/List");
         }
 
     }
