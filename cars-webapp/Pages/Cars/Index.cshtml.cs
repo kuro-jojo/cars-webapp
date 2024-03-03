@@ -32,7 +32,7 @@ namespace cars_webapp.Pages.Cars
             // Console.ReadLine();
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             var user = configuration.GetSection("AdminUser").Get<AdminUser>();
 
@@ -48,9 +48,9 @@ namespace cars_webapp.Pages.Cars
                     };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     ClaimsPrincipal principal = new ClaimsPrincipal(claimsIdentity);
-                    
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    return RedirectToPage("/admin/index");
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    return RedirectToPage("/List");
                 }
             }
             ErrorMessage = "Invalid username or password";
