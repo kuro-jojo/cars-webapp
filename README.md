@@ -21,5 +21,8 @@ dotnet run
 - Afficher les détails d'une voiture
 - Afficher la liste des voitures
 
+Pour la connexion : 
+- Username : admin
+- Password : admin
 ## Auteur
 [Koumou Jonathan A.](https://github/kuro-jojo)
