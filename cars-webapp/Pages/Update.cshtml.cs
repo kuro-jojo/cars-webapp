@@ -1,11 +1,9 @@
 using cars_webapp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Hosting;
-using System.ComponentModel.DataAnnotations;
 using cars_webapp.Data;
 
-namespace cars_webapp.Pages.Cars
+namespace cars_webapp.Pages
 {
     public class UpdateModel : PageModel
     {
@@ -27,7 +25,7 @@ namespace cars_webapp.Pages.Cars
         public void OnGet(string vin)
         {
             VIN = vin;
-            Car = Data.CarRepository.GetCarByVin(VIN);
+            Car = CarRepository.GetCarByVin(VIN);
 
         }
 

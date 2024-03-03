@@ -4,13 +4,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizePage("/Update");
-    options.Conventions.AuthorizeFolder("/Private");
-    options.Conventions.AllowAnonymousToPage("/Private/PublicPage");
+    options.Conventions.AuthorizePage("/Create");
+    options.Conventions.AuthorizePage("/Sell");
+    options.Conventions.AllowAnonymousToPage("/Login");
+    options.Conventions.AllowAnonymousToPage("/List");
     options.Conventions.AllowAnonymousToFolder("/Private/PublicPages");
 
-})
-    .WithRazorPagesRoot("/Pages/Cars");
+});
 
+builder.Services.AddAuthentication().AddCookie("BaseCookie", options =>
+{
+    options.Cookie.Name = "BaseCookie";
+    options.LoginPath = "/Login";
+    options.LogoutPath = "/Logout";
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,11 +37,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// app.MapGet("/", context =>
-// {
-//     context.Response.Redirect("/List");
-//     return Task.CompletedTask;
-// });
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/List");
+    return Task.CompletedTask;
+});
 
 app.MapRazorPages();
 

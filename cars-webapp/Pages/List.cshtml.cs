@@ -1,12 +1,11 @@
 using cars_webapp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace cars_webapp.Pages.Cars
+namespace cars_webapp.Pages
 {
 
     public class ListModel : PageModel
     {
-        private readonly string _dataFilePath = Data.File.DataFilePath;
         private readonly ILogger<ListModel> _logger;
         public List<Car> Cars { get; set; }
 

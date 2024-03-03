@@ -2,7 +2,7 @@ using cars_webapp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace cars_webapp.Pages.Cars
+namespace cars_webapp.Pages
 {
     public class CreateModel : PageModel
     {

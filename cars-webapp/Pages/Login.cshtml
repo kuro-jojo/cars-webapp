@@ -1,0 +1,35 @@
+@page
+@model cars_webapp.Pages.LoginModel
+@{
+
+}
+<div class="container col-md-3 h-100">
+    <h2 class=" mb-3">Connexion</h2>
+    <form method="post">
+        @if (Model.ErrorMessage != null)
+        {
+            <div class="alert alert-danger mt-3" role="alert">
+                @Model.ErrorMessage
+            </div>
+        }
+        @{
+            Model.AdminUser = new AdminUser();
+        }
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="@Model.AdminUser.UserName" class="fs-5 fw-bold m-2"></label>
+            <input asp-for="@Model.AdminUser.UserName" class="form-control" />
+            <span asp-validation-for="@Model.AdminUser.UserName" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.AdminUser.Password" class="fs-5 fw-bold m-2"></label>
+            <input asp-for="@Model.AdminUser.Password" class="form-control" />
+            <span asp-validation-for="@Model.AdminUser.Password" class="text-danger"></span>
+
+        </div>
+        <div class="form-group mt-4 d-flex">
+            <button type="submit" class="btn btn-outline-primary btn-lg w-50 mx-auto">Log in</button>
+        </div>
+    </form>
+</div>

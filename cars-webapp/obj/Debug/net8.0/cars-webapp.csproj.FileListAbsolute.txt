@@ -87,5 +87,5 @@ C:/Users/Kuro/source/repos/cars-webapp/obj/Debug/net8.0/ref/cars-webapp.dll
 /home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/cars-webapp.pdb
 /home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/cars-webapp.genruntimeconfig.cache
 /home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/ref/cars-webapp.dll
-/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/scopedcss/Pages/Cars/Shared/_Layout.cshtml.rz.scp.css
 /home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/cars-webapp.sourcelink.json
+/home/jonathan/Documents/ESP-DIC3/C-sharp/cars/cars-webapp/cars-webapp/obj/Debug/net8.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
